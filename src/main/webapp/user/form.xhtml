@@ -1,0 +1,48 @@
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+	<h:form>
+		<div class="col-md-6">
+
+			<h:messages styleClass="messages" errorClass="callout callout-danger"
+				infoClass="callout callout-info" warnClass="callout callout-warning" />
+
+			<!-- general form elements -->
+			<div class="box box-primary">
+				<div class="box-header">
+					<h3 class="box-title">
+						<ui:insert name="title" />
+					</h3>
+				</div>
+				<!-- /.box-header -->
+				<!-- form start -->
+				<div class="box-body">
+					<div class="form-group">
+						<h:outputLabel value="Name" for="fName" />
+						<h:inputText id="fName" label="Name"
+							value="#{usersController.selectedUser.name}" required="true"
+							styleClass="form-control" />
+					</div>
+					<div class="form-group">
+						<h:outputLabel value="Email" for="fEmail" />
+						<h:inputText id="fEmail" label="Email"
+							value="#{usersController.selectedUser.email}"
+							required="true" styleClass="form-control" />
+					</div>
+					<div class="form-group">
+						<h:outputLabel value="Password" for="fPassword" />
+						<h:inputSecret id="fPassword" label="Password"
+							value="#{usersController.selectedUser.password}" required="true"
+							styleClass="form-control" />
+					</div>
+				</div>
+				<div class="box-footer">
+					<h:commandButton action="#{usersController.save}" value="Save"
+						styleClass="btn btn-primary" />
+				</div>
+			</div>
+		</div>
+	</h:form>
+</ui:composition>

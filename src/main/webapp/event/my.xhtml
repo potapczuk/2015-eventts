@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templates/template.xhtml">
+	<ui:define name="title"> - My Events</ui:define>
+	<ui:define name="subtitle">My Events</ui:define>
+	<ui:define name="content">
+
+		<div class="row">
+			<ui:repeat value="#{eventsController.events}" var="item">
+				<div class="col-md-4">
+					<!-- Info box -->
+					<div class="box box-info">
+						<div class="box-header">
+							<h3 class="box-title">
+								<h:form>
+									<h:commandLink action="#{eventsController.view(item.id)}" >
+										<h:outputText value="#{item.name}" />
+									</h:commandLink>
+								</h:form>
+							</h3>
+						</div>
+						<div class="box-body">
+							<h:outputText value="#{item.description}" />
+						</div>
+						<!-- /.box-body -->
+						<div class="box-footer">
+							<h:outputText value="#{item.eventDate}">
+								<f:convertDateTime dateStyle="medium" type="both" />
+							</h:outputText>
+						</div>
+						<!-- /.box-footer-->
+					</div>
+					<!-- /.box -->
+				</div>
+			</ui:repeat>
+		</div>
+	</ui:define>
+</ui:composition>

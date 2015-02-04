@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templates/template.xhtml">
+	<ui:define name="title"> - <h:outputText
+			value="#{eventsController.selectedEvent.name}" />
+	</ui:define>
+	<ui:define name="subtitle">Event <small>Remove</small>
+	</ui:define>
+	<ui:define name="content">
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="box box-primary">
+					<div class="box-body">
+						<div>Do you really want to remove this record?</div>
+						<div>
+							<strong><h:outputText
+									value="#{eventsController.selectedEvent.name}" /></strong>
+						</div>
+					</div>
+					<div class="box-footer">
+						<h:form>
+							<h:commandButton action="#{eventsController.removeConf(eventsController.selectedEvent.id)}"
+								value="Remove" styleClass="btn btn-danger" />
+							<h:link styleClass="btn btn-default" outcome="/event/my">
+								<h:outputText value="#{i18n['template.cancel']}" />
+							</h:link>
+						</h:form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,23 @@
+Event
+    id
+    name
+    description
+    datetime
+    price
+    userId
+    
+User
+    id
+    name
+    email
+    password
+    
+    
+    
+Pendencias    
+    ok - Gerencia de usuario
+    Apagar
+    Login
+    Busca
+    My Events
+    breadcrumb

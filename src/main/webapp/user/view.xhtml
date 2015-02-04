@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templates/template.xhtml">
+	<ui:define name="title"> - <h:outputText
+			value="#{usersController.selectedUser.name}" />
+	</ui:define>
+	<ui:define name="subtitle">User</ui:define>
+	<ui:define name="content">
+
+		<div class="row">
+			<div class="col-md-12">
+				<h2>
+					<h:outputText value="#{usersController.selectedUser.name}" />
+				</h2>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<!-- Info box -->
+				<div class="box box-info">
+
+					<div class="box-tools pull-right">
+						
+						<h:form><div class="btn-group">
+							<h:commandLink action="#{usersController.edit()}" styleClass="btn btn-success btn-xs">
+								<f:param name="id" value="#{usersController.selectedUser.id}" />
+								<h:outputText value="#{i18n['template.edit']}" />
+							</h:commandLink>
+							
+							<h:commandLink action="#{usersController.remove()}" styleClass="btn btn-danger btn-xs">
+								<f:param name="id" value="#{usersController.selectedUser.id}" />
+								<h:outputText value="#{i18n['template.remove']}" />
+							</h:commandLink>
+						</div></h:form>
+						
+					</div>
+
+					<div class="box-body">
+						<h:outputText
+							value="#{usersController.selectedUser.email}" />
+					</div>
+					<!-- /.box-body -->
+					<div class="box-footer">
+						<h:outputText value="#{usersController.selectedUser.createdAt}">
+							<f:convertDateTime dateStyle="medium" type="both" />
+						</h:outputText>
+					</div>
+					<!-- /.box-footer-->
+				</div>
+				<!-- /.box -->
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templates/template.xhtml">
+	<ui:define name="title"> - <h:outputText
+			value="#{usersController.selectedUser.name}" />
+	</ui:define>
+	<ui:define name="subtitle">User <small>New</small>
+	</ui:define>
+	<ui:define name="content">
+
+		<div class="row">
+			<ui:decorate template="form.xhtml">
+				<ui:define name="title">
+					<h:outputText value="New User" />
+				</ui:define>
+			</ui:decorate>
+		</div>
+	</ui:define>
+</ui:composition>
