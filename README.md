@@ -9,7 +9,6 @@ ROADMAP
   - Search
   - Login
   - Breadcrumb
-  - Spring Framework
   - JUnit
   - Arquillian
   
