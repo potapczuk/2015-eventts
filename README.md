@@ -2,10 +2,9 @@
 
 Java EE web app to share events with the world using JSF, EJB, CDI, JPA, JTA and Hibernate
 
-WORK IN PROGRESS
+PROJECT PAUSED. I CREATED ANOTHER REPOSITORY WITH AN ARCHICTECTURE USING SPRING
 
 ROADMAP
-
   - Search
   - Login
   - Breadcrumb
